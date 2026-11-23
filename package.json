@@ -1,6 +1,6 @@
 {
   "name": "action-set-json-field",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "This GitHub Action helps edit a JSON file and set a field value",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jossef/action-set-json-field"
+    "url": "git+https://github.com/step-security/action-set-json-field.git"
   },
   "keywords": [
     "actions",
@@ -17,13 +17,14 @@
     "edit json",
     "node"
   ],
-  "author": "Jossef Harush",
+  "author": "step-security",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.3",
-    "jest": "^28.1.1"
+    "@actions/core": "^2.0.0",
+    "axios": "^1.21.0"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.4"
+    "@vercel/ncc": "^0.38.3",
+    "jest": "^28.1.1"
   }
 }

@@ -8,7 +8,7 @@ This GitHub Action helps edit a JSON file and set a field value
 Add this step in your workflow file
 ```yaml
 - name: Update my-file.json description
-  uses: step-security/action-set-json-field@v2.1
+  uses: step-security/action-set-json-field@v2
   with:
     file: my-file.json
     field: description
@@ -44,11 +44,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
  
     - name: Gets semantic release info
       id: semantic_release_info
-      uses: jossef/action-semantic-release-info@v1
+      uses: jossef/action-semantic-release-info@v3
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
@@ -58,7 +58,7 @@ jobs:
         npm run build
 
     - name: Update package.json version
-      uses: step-security/action-set-json-field@v2.1
+      uses: step-security/action-set-json-field@v2
       with:
         file: package.json
         field: version
@@ -73,7 +73,7 @@ jobs:
         git tag ${{ steps.semantic_release_info.outputs.git_tag }}
         
     - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
+      uses: step-security/ad-m-github-push-action@v1
       with:
         github_token: ${{ github.token }}
         tags: true
@@ -92,4 +92,6 @@ jobs:
 
 
 ## Credits
-This repo was forked and modified. original - https://github.com/marketplace/actions/get-the-upload-url-for-a-release
+This repo was forked and modified. 
+original - https://github.com/marketplace/actions/get-the-upload-url-for-a-release
+           https://github.com/jossef/action-set-json-field
